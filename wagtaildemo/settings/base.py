@@ -17,8 +17,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wagtaildemo',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'wagtaildemo',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'wagtaildemo.db'),
     }
 }
 
@@ -37,7 +39,7 @@ TIME_ZONE = 'Europe/London'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'sl'
 
 SITE_ID = 1
 
@@ -210,7 +212,8 @@ LOGGING = {
     }
 }
 
-
 # WAGTAIL SETTINGS
 
 WAGTAIL_SITE_NAME = 'wagtaildemo'
+WAGTAIL_DATE_FORMAT = '%d.%m.%Y'
+WAGTAIL_DATETIME_FORMAT = '%d.%m.%Y %H:%M'

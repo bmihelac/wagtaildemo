@@ -15,7 +15,7 @@ from wagtail.wagtailsnippets.models import register_snippet
 from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
 from wagtail.wagtailsearch import index
 
-from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock
+from wagtail.wagtailcore.blocks import TextBlock, StructBlock, StreamBlock, FieldBlock, CharBlock, RichTextBlock, RawHTMLBlock, DateBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 
@@ -78,6 +78,11 @@ class DemoStreamBlock(StreamBlock):
     pullquote = PullQuoteBlock()
     aligned_html = AlignedHTMLBlock(icon="code", label='Raw HTML')
     document = DocumentChooserBlock(icon="doc-full-inverse")
+    my_date = DateBlock(
+        label='Date block with custom format',
+        format='%d/%m/%y',
+        input_formats=['%d/%m/%y']
+    )
 
 
 # A couple of abstract classes that contain commonly used fields
