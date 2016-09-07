@@ -17,8 +17,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wagtaildemo',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'wagtaildemo',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'wagtaildemo.db'),
+
     }
 }
 
