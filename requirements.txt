@@ -10,10 +10,15 @@ Pillow==3.2.0
 html5lib==0.999999
 
 # Dependencies for hosting
-django-redis==3.8.2
-elasticsearch==1.2.0
+#django-redis==3.8.2
+#elasticsearch==1.2.0
 
 # Dependencies for Heroku deployment
-dj-database-url==0.3.0
-whitenoise==2.0.4
-uwsgi==2.0.11.2
+#dj-database-url==0.3.0
+#whitenoise==2.0.4
+#uwsgi==2.0.11.2
+
+pdbpp==0.8.2
+django-debug-toolbar==1.5
+Werkzeug==0.11.11
+

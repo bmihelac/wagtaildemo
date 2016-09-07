@@ -20,9 +20,6 @@ urlpatterns = [
     url(r'search/$', views.search, name='search'),
     url(r'^api/', include(wagtailapi_urls)),
 
-    # For anything not caught by a more specific rule above, hand over to
-    # Wagtail's serving mechanism
-    url(r'', include(wagtail_urls)),
 ]
 
 
@@ -35,3 +32,18 @@ if settings.DEBUG:
     urlpatterns += [
         url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'demo/images/favicon.ico'))
     ]
+
+if settings.DEBUG:
+    try:
+        import debug_toolbar
+        urlpatterns += [
+            url(r'^__debug__/', include(debug_toolbar.urls)),
+        ]
+    except ImportError:
+        pass
+
+urlpatterns += [
+    # For anything not caught by a more specific rule above, hand over to
+    # Wagtail's serving mechanism
+    url(r'', include(wagtail_urls)),
+]
